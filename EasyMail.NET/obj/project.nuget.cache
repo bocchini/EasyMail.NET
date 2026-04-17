@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "rF5Kl0bKhW0=",
+  "success": true,
+  "projectFilePath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Americo\\.nuget\\packages\\mailkit\\2.9.0\\mailkit.2.9.0.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\mimekit\\2.9.2\\mimekit.2.9.2.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\portable.bouncycastle\\1.8.5\\portable.bouncycastle.1.8.5.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\system.reflection.typeextensions\\4.4.0\\system.reflection.typeextensions.4.4.0.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\system.security.cryptography.pkcs\\4.7.0\\system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "O pacote 'MimeKit' 2.9.2 tem uma moderado vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-g7hc-96xr-gvvx",
+      "projectPath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+      "libraryId": "MimeKit",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

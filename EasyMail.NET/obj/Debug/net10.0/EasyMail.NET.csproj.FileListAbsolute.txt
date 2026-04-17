@@ -1,0 +1,12 @@
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\bin\Debug\net10.0\EasyMail.NET.deps.json
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\bin\Debug\net10.0\EasyMail.NET.dll
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\bin\Debug\net10.0\EasyMail.NET.pdb
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.csproj.AssemblyReference.cache
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.GeneratedMSBuildEditorConfig.editorconfig
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.AssemblyInfoInputs.cache
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.AssemblyInfo.cs
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.csproj.CoreCompileInputs.cache
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.dll
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\refint\EasyMail.NET.dll
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.pdb
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\ref\EasyMail.NET.dll
