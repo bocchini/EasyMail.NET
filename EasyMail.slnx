@@ -1,4 +1,4 @@
 <Solution>
   <Project Path="EasyMail.NET/EasyMail.NET.csproj" />
-  <Project Path="EasyMailTest.Conole/EasyMailTest.Conole.csproj" />
+  <Project Path="TesteAPI/TesteAPI.csproj" />
 </Solution>

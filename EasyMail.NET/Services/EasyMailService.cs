@@ -1,16 +1,19 @@
 ﻿using EasyMail.NET.Interfaces;
+using EasyMail.NET.Models;
 using MailKit.Net.Smtp;
 using MimeKit;
 
-namespace EasyMail.NET;
+namespace EasyMail.NET.Services;
 
 public class EasyMailService : IEasyMail
 {
+  private readonly (string username, string password, string Host, int Port, bool UseSsl) _config;
   readonly MimeMessage _mineMesseage;
   readonly SmtpClient _client;
 
-  public EasyMailService()
+  public EasyMailService(Autentications auth, ServerConfiguration config)
   {
+    _config = (auth.Username, auth.Password, config.Host, config.Port, config.EnableSSL);
     _mineMesseage = new MimeMessage();
     _client = new SmtpClient();
   }
@@ -36,6 +39,7 @@ public class EasyMailService : IEasyMail
 
   public IEasyMail From(string email, string? name = null)
   {
+
     _mineMesseage.From.Add(new MailboxAddress(name ?? email, email));
     return this;
   }
@@ -44,8 +48,7 @@ public class EasyMailService : IEasyMail
   {
     try
     {
-      await _client.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-      await _client.AuthenticateAsync("", "");
+      await ClientConnectAsync();
       await _client.SendAsync(_mineMesseage, new CancellationToken());
       return "Success: Email sent successfully.";
     }
@@ -75,9 +78,8 @@ public class EasyMailService : IEasyMail
   {
     try
     {
-      await _client.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-      await _client.AuthenticateAsync(email, password);
-      await _client.SendAsync(_mineMesseage, new CancellationToken());
+      await ClientConnectAsync();
+
       return "Success: Email sent successfully.";
     }
     catch (Exception ex)
@@ -87,6 +89,19 @@ public class EasyMailService : IEasyMail
     finally
     {
       await _client.DisconnectAsync(true);
+    }
+  }
+
+  private async Task ClientConnectAsync()
+  {
+    try
+    {
+      await _client.ConnectAsync(_config.Host, _config.Port, MailKit.Security.SecureSocketOptions.StartTls);
+      await _client.AuthenticateAsync(_config.username, _config.password);
+    }
+    catch (Exception ex)
+    {
+      throw new Exception($"Failed to connect to SMTP server: {ex.Message}");
     }
   }
 }
