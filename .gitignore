@@ -264,3 +264,4 @@ temp/
 ehthumbs.db
 Thumbs.db
 .fake
+TesteAPI/appsettings.json
