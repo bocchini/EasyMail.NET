@@ -1,27 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "rF5Kl0bKhW0=",
+  "dgSpecHash": "75dEbCELqFQ=",
   "success": true,
   "projectFilePath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Americo\\.nuget\\packages\\mailkit\\2.9.0\\mailkit.2.9.0.nupkg.sha512",
-    "C:\\Users\\Americo\\.nuget\\packages\\mimekit\\2.9.2\\mimekit.2.9.2.nupkg.sha512",
-    "C:\\Users\\Americo\\.nuget\\packages\\portable.bouncycastle\\1.8.5\\portable.bouncycastle.1.8.5.nupkg.sha512",
-    "C:\\Users\\Americo\\.nuget\\packages\\system.reflection.typeextensions\\4.4.0\\system.reflection.typeextensions.4.4.0.nupkg.sha512",
-    "C:\\Users\\Americo\\.nuget\\packages\\system.security.cryptography.pkcs\\4.7.0\\system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
+    "C:\\Users\\Americo\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\mailkit\\4.16.0\\mailkit.4.16.0.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.6\\microsoft.extensions.configuration.10.0.6.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.6\\microsoft.extensions.configuration.abstractions.10.0.6.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.6\\microsoft.extensions.configuration.binder.10.0.6.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.6\\microsoft.extensions.dependencyinjection.10.0.6.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.6\\microsoft.extensions.dependencyinjection.abstractions.10.0.6.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.6\\microsoft.extensions.primitives.10.0.6.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\mimekit\\4.16.0\\mimekit.4.16.0.nupkg.sha512",
+    "C:\\Users\\Americo\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.0\\system.security.cryptography.pkcs.10.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "message": "O pacote 'MimeKit' 2.9.2 tem uma moderado vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-g7hc-96xr-gvvx",
-      "projectPath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
-      "libraryId": "MimeKit",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }
