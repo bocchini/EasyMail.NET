@@ -19,6 +19,12 @@ public sealed class BuilderEmail
     return builder;
   }
 
+  public BuilderEmail AddFromInformation(string email, string? name = null)
+  {
+    _fromEmail = email;
+    _fromName = name ?? string.Empty;
+    return this;
+  }
 
   public BuilderEmail AddToInformation(string email, string? name = null)
   {
@@ -42,17 +48,19 @@ public sealed class BuilderEmail
 
   public InformationToSendEmail Build()
   {
-    if (_fromEmail == null || IsValidEmail(_fromEmail))
+    if (_fromEmail == null || !IsValidEmail(_fromEmail))
       throw new InvalidOperationException("From information is required.");
-    if (_toEmail == null || IsValidEmail(_toEmail))
+    if (_toEmail == null || !IsValidEmail(_toEmail))
       throw new InvalidOperationException("From name is required.");
 
     return new InformationToSendEmail
     {
       _personFrom = new PersonFrom(_fromEmail, _fromName),
-      _personTo = new PersonTo(_toEmail!, _toName)
-    }
-    ;
+      _personTo = new PersonTo(_toEmail!, _toName),
+      Body = _body,
+      Subject = _subject,
+      IsHtml = _isHtml,
+    };
   }
 
   private bool IsValidEmail(string email)

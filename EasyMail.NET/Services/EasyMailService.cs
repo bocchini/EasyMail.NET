@@ -18,78 +18,47 @@ public class EasyMailService : IEasyMail
     _client = new SmtpClient();
   }
 
-  public IEasyMail Body(string content, bool isHtml = false)
+  public async Task<string> SendAsync(MimeMessage mimeMessage)
   {
-    if (isHtml)
+    try
+    {
+      await ClientConnectAsync();
+      await _client.SendAsync(mimeMessage);
+      return "Success: Email sent successfully.";
+    }
+    catch (Exception ex)
+    {
+      return $"Failed: {ex.Message}";
+    }
+    finally
+    {
+      await _client.DisconnectAsync(true);
+    }
+  }
+
+  public async Task<string> SendEmail(InformationToSendEmail informationToSendEmail)
+  {
+
+    _mineMesseage.From.Add(new MailboxAddress(informationToSendEmail._personFrom._name, informationToSendEmail._personFrom._email));
+    _mineMesseage.To.Add(new MailboxAddress(informationToSendEmail._personTo._name, informationToSendEmail._personTo._email));
+    _mineMesseage.Subject = informationToSendEmail.Subject;
+
+    if (informationToSendEmail.IsHtml)
     {
       _mineMesseage.Body = new TextPart("html")
       {
-        Text = content
+        Text = informationToSendEmail.Body
       };
     }
     else
     {
       _mineMesseage.Body = new TextPart("plain")
       {
-        Text = content
+        Text = informationToSendEmail.Body
       };
     }
-    return this;
-  }
 
-  public IEasyMail From(string email, string? name = null)
-  {
-
-    _mineMesseage.From.Add(new MailboxAddress(name ?? email, email));
-    return this;
-  }
-
-  public async Task<string> SendAsync()
-  {
-    try
-    {
-      await ClientConnectAsync();
-      await _client.SendAsync(_mineMesseage, new CancellationToken());
-      return "Success: Email sent successfully.";
-    }
-    catch (Exception ex)
-    {
-      return $"Failed: {ex.Message}";
-    }
-    finally
-    {
-      await _client.DisconnectAsync(true);
-    }
-  }
-
-  public IEasyMail Subject(string subject)
-  {
-    _mineMesseage.Subject = subject;
-    return this;
-  }
-
-  public IEasyMail To(string email, string? name = null)
-  {
-    _mineMesseage.To.Add(new MailboxAddress(name ?? string.Empty, email));
-    return this;
-  }
-
-  public async Task<string> SendAsync(string email, string password)
-  {
-    try
-    {
-      await ClientConnectAsync();
-
-      return "Success: Email sent successfully.";
-    }
-    catch (Exception ex)
-    {
-      return $"Failed: {ex.Message}";
-    }
-    finally
-    {
-      await _client.DisconnectAsync(true);
-    }
+    return await SendAsync(_mineMesseage);
   }
 
   private async Task ClientConnectAsync()

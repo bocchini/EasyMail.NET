@@ -23,3 +23,4 @@ c:\Dev\Net\Projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.dll
 c:\Dev\Net\Projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\refint\EasyMail.NET.dll
 c:\Dev\Net\Projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.pdb
 c:\Dev\Net\Projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\ref\EasyMail.NET.dll
+d:\dev\csharp\projetos\EasyMail.NET\EasyMail.NET\obj\Debug\net10.0\EasyMail.NET.sourcelink.json
