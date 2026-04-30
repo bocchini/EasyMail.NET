@@ -1,22 +1,20 @@
-﻿using EasyMail.NET.Interfaces;
-using EasyMail.NET.Models;
-using MailKit.Net.Smtp;
+﻿using EasyMail.NET.Models;
+using EasyMail.NET.Wrapper;
 using MimeKit;
 
 namespace EasyMail.NET.Services;
 
-public class EasyMailService : IEasyMail
+public class EasyMailService
 {
-  private readonly (string username, string password, string Host, int Port, bool UseSsl) _config;
-  readonly MimeMessage _mineMesseage;
-  readonly SmtpClient _client;
+  private readonly ISmtpClientWrapper _client;
 
-  public EasyMailService(Autentications auth, ServerConfiguration config)
+  public EasyMailService(ISmtpClientWrapper client)
   {
-    _config = (auth.Username, auth.Password, config.Host, config.Port, config.EnableSSL);
+    _client = client;
     _mineMesseage = new MimeMessage();
-    _client = new SmtpClient();
   }
+
+  readonly MimeMessage _mineMesseage;
 
   public async Task<string> SendAsync(MimeMessage mimeMessage)
   {
@@ -32,7 +30,7 @@ public class EasyMailService : IEasyMail
     }
     finally
     {
-      await _client.DisconnectAsync(true);
+      await _client.DisconnectAsync();
     }
   }
 
@@ -65,8 +63,8 @@ public class EasyMailService : IEasyMail
   {
     try
     {
-      await _client.ConnectAsync(_config.Host, _config.Port, MailKit.Security.SecureSocketOptions.StartTls);
-      await _client.AuthenticateAsync(_config.username, _config.password);
+      await _client.ConnectAsync(MailKit.Security.SecureSocketOptions.StartTls);
+      await _client.AuthenticateAsync();
     }
     catch (Exception ex)
     {
