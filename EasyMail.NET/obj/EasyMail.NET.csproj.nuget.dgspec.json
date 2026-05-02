@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {}
+    "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {}
   },
   "projects": {
-    "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {
+    "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+        "projectUniqueName": "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
         "projectName": "EasyMail.NET",
-        "projectPath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
-        "packagesPath": "C:\\Users\\Americo\\.nuget\\packages\\",
-        "outputPath": "D:\\dev\\csharp\\projetos\\EasyMail.NET\\EasyMail.NET\\obj\\",
+        "projectPath": "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+        "packagesPath": "C:\\Users\\Pages Digital\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Americo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pages Digital\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

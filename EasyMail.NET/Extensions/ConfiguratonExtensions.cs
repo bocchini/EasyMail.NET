@@ -24,14 +24,11 @@ public static class ConfiguratonExtensions
         var port = configuration.GetValue<int>("EasyMail:Configuration:Port");
         var useSsl = configuration.GetValue<bool>("EasyMail:Configuration:EnableSSL");
 
-        var auth = Autentications.Create(username, password);
-        var config = ServerConfiguration.Create(host, port, useSsl);
+        var auth = Autentications.Create(username!, password!);
+        var config = ServerConfiguration.Create(host!, port, useSsl);
 
-        services.AddScoped(options =>
-         {
-             var smtp = new SmtpClientWrapper(auth, config),
-             services.AddScoped(options => new EasyMailService(smtp));
-         });
+        services.AddScoped<ISmtpClientWrapper>(sp => new SmtpClientWrapper(auth, config));
+        services.AddScoped<EasyMailService>();
     }
 
 }

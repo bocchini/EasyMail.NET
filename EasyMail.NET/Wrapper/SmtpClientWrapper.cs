@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using EasyMail.NET.Models;
 using MailKit.Net.Smtp;
 using MailKit.Security;
@@ -6,6 +7,7 @@ using MimeKit;
 
 namespace EasyMail.NET.Wrapper;
 
+[ExcludeFromCodeCoverage]
 public class SmtpClientWrapper : ISmtpClientWrapper
 {
   readonly ISmtpClient _client;

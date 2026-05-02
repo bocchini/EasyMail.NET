@@ -1,9 +1,8 @@
 ﻿using EasyMail.NET.Models;
-using EasyMail.NET.Services;
 
 namespace EasyMail.NET;
 
-public sealed class BuilderEmail
+public sealed class EmailBuilder
 {
   private string _fromEmail = string.Empty;
   private string _fromName = string.Empty;
@@ -13,33 +12,33 @@ public sealed class BuilderEmail
   private string _body = string.Empty;
   private bool _isHtml;
 
-  public static BuilderEmail Create()
+  public static EmailBuilder Create()
   {
-    var builder = new BuilderEmail();
+    var builder = new EmailBuilder();
     return builder;
   }
 
-  public BuilderEmail AddFromInformation(string email, string? name = null)
+  public EmailBuilder AddFromInformation(string email, string? name = null)
   {
     _fromEmail = email;
-    _fromName = name ?? string.Empty;
+    _fromName = string.IsNullOrWhiteSpace(name) ? email : name;
     return this;
   }
 
-  public BuilderEmail AddToInformation(string email, string? name = null)
+  public EmailBuilder AddToInformation(string email, string? name = null)
   {
     _toEmail = email;
-    _toName = name ?? string.Empty;
+    _toName = string.IsNullOrWhiteSpace(name) ? email : name;
     return this;
   }
 
-  public BuilderEmail AddSubject(string subject)
+  public EmailBuilder AddSubject(string subject)
   {
     _subject = subject;
     return this;
   }
 
-  public BuilderEmail AddBody(string body, bool isHtml = false)
+  public EmailBuilder AddBody(string body, bool isHtml = false)
   {
     _body = body;
     _isHtml = isHtml;
