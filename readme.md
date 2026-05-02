@@ -70,7 +70,7 @@ var emailFrom = "market@email.com";
 
 var nameFrom = "Market";
 
-var message = BuilderEmail
+var message = EmailBuilder
 
 .Create()
 
@@ -155,7 +155,7 @@ public class CupomController : ControllerBase
       var emailFrom = "market@email.com";
       var nameFrom = "Market";
 
-       var message = BuilderEmail
+       var message = EmailBuilder
         .Create()
         .AddToInformation(emailCliente, "Nome do Cliente")
         .AddFromInformation(emailFrom, nameFrom)
