@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace EasyMail.NET.Models;
 
+[ExcludeFromCodeCoverage]
 public sealed class InformationToSendEmail
 {
   public InformationToSendEmail() { }

@@ -1,7 +1,10 @@
 
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace EasyMail.NET.Models;
 
+[ExcludeFromCodeCoverage]
 public sealed class ServerConfiguration
 {
     public required string Host { get; init; }

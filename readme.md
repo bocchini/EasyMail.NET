@@ -6,12 +6,15 @@ License: MIT
 *Sending emails in .NET has never been so simple.*
 Stop struggling with complex SMTP configurations and cumbersome libraries. With EasyMail, you send professional emails in seconds.
 
+![Status dos Tests](https://github.com/bocchini/EasyMail.NET/actions/workflows/dotnet-tests.yml/badge.svg)
+
 ## ✨ Why EasyMail?
 
 * *Zero Configuration:*
 Start sending with just a few lines of code.
 
-* *Fluent API:* Readable and elegant syntax that developers love.
+* *Fluent API:* 
+Readable and elegant syntax that developers love.
 
 * *Provider Agnostic:* Switch from SMTP to SendGrid or other providers by simply changing one setting.
 
@@ -32,65 +35,47 @@ builder.Services.AddConfiguration(builder.Configuration);
 
 Adding the service settings to Appsettings.json
 
-"EasyMail": {
-
-"Configuration": {
-
-"Username": "yourUsername",
-
-"Password": "yourPassword",
-
-"Host": "yourHostEmail",
-
-"Port": 587,
-
-"EnableSSL": true
-
-}
-
-}
+json
+ "EasyMail": {
+    "Configuration": {
+      "Username": "yourUsername",
+      "Password": "yourPassword",
+      "Host": "yourHostEmail",
+      "Port": 587,
+      "EnableSSL": true
+    }
+  }
 
 ### 2. Sending your first email
 Inject IEasyMail into your service or controller and use the fluent syntax:
 
 csharp
-public class CouponController : ControllerBase
+public class CupomController : ControllerBase
 {
-private readonly IEasyMail _mail;
+    private readonly IEasyMail _mail;
 
-public CouponController(IEasyMail mail) => _mail = mail;
+    public CupomController(IEasyMail mail) => _mail = mail;
 
-[HttpPost]
+    [HttpPost]
+    public async Task<IActionResult> EnviarCupom([FromServices] EasyMailService service, [FromBody] string emailCliente)
+    {
+      var emailFrom = "market@email.com";
+      var nameFrom = "Market";
 
-public async Task<IActionResult> SendCoupon([FromServices] EasyMailService service, [FromBody] string clientEmail)
+       var message = EmailBuilder
+        .Create()
+        .AddToInformation(emailCliente, "Nome do Cliente")
+        .AddFromInformation(emailFrom, nameFrom)
+        .AddSubject("Seu Cupom de Desconto Chegou! 🎁")
+        .AddBody("<h1>Olá!</h1><p>Use o código <strong>PRIMEIRACOMPRA</strong> para 10% OFF.</p>", true)
+        .Build();
 
-{
-
-var emailFrom = "market@email.com";
-
-var nameFrom = "Market";
-
-var message = BuilderEmail
-
-.Create()
-
-.AddToInformation(clientEmail, "Client Name")
-
-.AddFromInformation(emailFrom, nameFrom)
-
-.AddSubject("Your Discount Coupon Has Arrived! 🎁")
-
-.AddBody("<h1>Hello!</h1><p>Use code <strong>FIRSTPURCHASE</strong> for 10% OFF.</p>", true)
-
-.Build();
-
-var result = await service.SendEmail(message);
-
-return Ok(result);
-
+      var result = await service.SendEmail(message);
+      return Ok(result);
+       
+    }
 }
 
-}
 ## 📄 License
 Distributed under the MIT License. See LICENSE for more information.
 
@@ -128,7 +113,7 @@ E adicionando o extension passando a configuração;
 builder.Services.AddConfiguration(builder.Configuration);
 
 Adicionando as configurações do serviço no Appsettings.json
-
+json
  "EasyMail": {
     "Configuration": {
       "Username": "yourUsername",
@@ -155,7 +140,7 @@ public class CupomController : ControllerBase
       var emailFrom = "market@email.com";
       var nameFrom = "Market";
 
-       var message = BuilderEmail
+       var message = EmailBuilder
         .Create()
         .AddToInformation(emailCliente, "Nome do Cliente")
         .AddFromInformation(emailFrom, nameFrom)

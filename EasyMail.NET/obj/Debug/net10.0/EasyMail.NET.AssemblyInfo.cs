@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EasyMail.NET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03c36a60f9f0a4bbe4e9aa19e10ec43fcd6fa0ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71f5d64eaff75a1c180ce8542710f6aab625e9ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("EasyMail.NET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EasyMail.NET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
