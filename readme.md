@@ -35,7 +35,7 @@ builder.Services.AddConfiguration(builder.Configuration);
 
 Adding the service settings to Appsettings.json
 
-json
+```
  "EasyMail": {
     "Configuration": {
       "Username": "yourUsername",
@@ -45,6 +45,7 @@ json
       "EnableSSL": true
     }
   }
+```
 
 ### 2. Sending your first email
 Inject IEasyMail into your service or controller and use the fluent syntax:
@@ -57,7 +58,7 @@ public class CupomController : ControllerBase
     public CupomController(IEasyMail mail) => _mail = mail;
 
     [HttpPost]
-    public async Task<IActionResult> EnviarCupom([FromServices] EasyMailService service, [FromBody] string emailCliente)
+    public async Task<IActionResult> EnviarCupom([FromServices] IEasyMailService service, [FromBody] string emailCliente)
     {
       var emailFrom = "market@email.com";
       var nameFrom = "Market";
@@ -108,12 +109,14 @@ dotnet add package EasyMail.NET
 ### 1. Configuração Inicial
 No seu Program.cs ou Startup.cs, adicione o EasyMail:
 Importando a classe Extensions
+
 using EasyMail.NET.Extensions;
+
 E adicionando o extension passando a configuração;
 builder.Services.AddConfiguration(builder.Configuration);
 
 Adicionando as configurações do serviço no Appsettings.json
-json
+```
  "EasyMail": {
     "Configuration": {
       "Username": "yourUsername",
@@ -123,7 +126,7 @@ json
       "EnableSSL": true
     }
   }
-
+```
 
 ### 2. Enviando seu primeiro e-mail
 Injete o IEasyMail em seu serviço ou controller e use a sintaxe fluente:
@@ -135,7 +138,7 @@ public class CupomController : ControllerBase
     public CupomController(IEasyMail mail) => _mail = mail;
 
     [HttpPost]
-    public async Task<IActionResult> EnviarCupom([FromServices] EasyMailService service, [FromBody] string emailCliente)
+    public async Task<IActionResult> EnviarCupom([FromServices] IEasyMailService service, [FromBody] string emailCliente)
     {
       var emailFrom = "market@email.com";
       var nameFrom = "Market";
