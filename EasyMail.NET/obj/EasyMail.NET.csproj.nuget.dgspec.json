@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {}
+    "c:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {
+    "c:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+        "projectUniqueName": "c:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
         "projectName": "EasyMail.NET",
-        "projectPath": "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
+        "projectPath": "c:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\EasyMail.NET.csproj",
         "packagesPath": "C:\\Users\\Pages Digital\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\obj\\",
+        "outputPath": "c:\\Dev\\Net\\Projetos\\EasyMail.NET\\EasyMail.NET\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
