@@ -1,10 +1,11 @@
-﻿using EasyMail.NET.Models;
+﻿using EasyMail.NET.Interfaces;
+using EasyMail.NET.Models;
 using EasyMail.NET.Wrapper;
 using MimeKit;
 
 namespace EasyMail.NET.Services;
 
-public class EasyMailService
+public class EasyMailService : IEasyMailService
 {
   private readonly ISmtpClientWrapper _client;
 

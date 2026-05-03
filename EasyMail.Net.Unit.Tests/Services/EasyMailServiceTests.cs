@@ -1,4 +1,5 @@
-﻿using EasyMail.NET.Models;
+﻿using EasyMail.NET.Interfaces;
+using EasyMail.NET.Models;
 using EasyMail.NET.Services;
 using EasyMail.NET.Wrapper;
 using MimeKit;
@@ -10,7 +11,7 @@ namespace EasyMail.NET.Tests.Services;
 public class EasyMailServiceTests
 {
     private readonly ISmtpClientWrapper _smtpClientMock;
-    private readonly EasyMailService _service;
+    private readonly IEasyMailService _service;
 
     public EasyMailServiceTests()
     {
